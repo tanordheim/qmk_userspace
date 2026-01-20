@@ -17,6 +17,8 @@ enum layers {
 };
 
 
+const int TRACKPAD_SENSITIVITY_DIVISOR = 2;
+
 // Aliases for readability
 #define COLEMAK   DF(_COLEMAK_DH)
 #define QWERTY    DF(_QWERTY)
@@ -275,3 +277,10 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [7] = { ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______)  }
 };
 #endif
+
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+    // reduce the movement speed of the cursor
+    mouse_report.x = mouse_report.x / TRACKPAD_SENSITIVITY_DIVISOR;
+    mouse_report.y = mouse_report.y / TRACKPAD_SENSITIVITY_DIVISOR;
+    return mouse_report;
+}
