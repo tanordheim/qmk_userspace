@@ -1,4 +1,5 @@
 #pragma once
+#define PERMISSIVE_HOLD
+#define TAPPING_TERM 150
 #define COMBO_SHOULD_TRIGGER
 #define COMBO_TERM 30
-#define QUICK_TAP_TERM 175

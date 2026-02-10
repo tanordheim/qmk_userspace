@@ -184,7 +184,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Sym Layer: Numbers and symbols
  */
     [_SYM] = LAYOUT_split_3x6_5_hlc(
-      _______, _______,  NO_GRV, NO_BSLS, NO_HASH, NO_ASTR,                                     _______, _______, _______, _______, _______, _______,
+      _______,NOM_PIPE,  NO_GRV, NO_BSLS, NO_HASH, NO_ASTR,                                     _______, _______, _______, _______, _______, _______,
       _______, NO_PERC, NO_CIRC, NO_AMPR, NOM_DLR,  NO_EQL,                                     _______, _______, _______, _______, _______, _______,
       _______, NO_PLUS,NOM_TILD,  NOM_AT, NO_UNDS, NO_MINS, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
