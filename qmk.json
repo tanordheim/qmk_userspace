@@ -24,6 +24,13 @@
                 "HLC_TFT_DISPLAY": "1",
                 "TARGET": "splitkb_halcyon_kyria_rev4_hlc_tft_display"
             }
+        ],
+        [
+            "splitkb/elora/rev1",
+            "tanordheim",
+            {
+                "TARGET": "splitkb_elora_rev1"
+            }
         ]
     ]
 }
