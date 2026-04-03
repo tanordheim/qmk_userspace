@@ -45,7 +45,7 @@ const key_override_t semicolon_shift_override    = ko_make_basic(MOD_MASK_SHIFT,
 const key_override_t dblquote_shift_override     = ko_make_basic(MOD_MASK_SHIFT, NO_DQUO, NOM_QUOT);
 const key_override_t comma_shift_override        = ko_make_basic(MOD_MASK_SHIFT, NO_COMM, NOM_LABK);
 const key_override_t dot_shift_override          = ko_make_basic(MOD_MASK_SHIFT, NO_DOT,  NOM_RABK);
-const key_override_t slash_shift_override        = ko_make_basic(MOD_MASK_SHIFT, NO_SLSH, NOM_BSLS);
+const key_override_t slash_shift_override        = ko_make_basic(MOD_MASK_SHIFT, NO_SLSH, NOM_PIPE);
 const key_override_t questionmark_shift_override = ko_make_basic(MOD_MASK_SHIFT, NO_QUES, NO_EXLM);
 const key_override_t *key_overrides[] = {
     &semicolon_shift_override,
@@ -60,7 +60,7 @@ const key_override_t *key_overrides[] = {
 const uint16_t PROGMEM lprn_combo[] = {NO_E, NO_R, COMBO_END};
 const uint16_t PROGMEM rprn_combo[] = {NO_U, NO_I, COMBO_END};
 const uint16_t PROGMEM lcbr_combo[] = {NO_D, NO_F, COMBO_END};
-const uint16_t PROGMEM rcbr_combo[] = {NO_H, NO_J, COMBO_END};
+const uint16_t PROGMEM rcbr_combo[] = {NO_J, NO_K, COMBO_END};
 const uint16_t PROGMEM lbrc_combo[] = {NO_C, NO_V, COMBO_END};
 const uint16_t PROGMEM rbrc_combo[] = {NO_M, NO_COMM, COMBO_END};
 
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Base Layer: QWERTY
  */
     [_QWERTY] = LAYOUT_myr(
-     KC_F13 ,  NO_1 ,  NO_2   ,  NO_3  ,   NO_4 ,   NO_5 ,          _______,     _______,           NO_6 ,  NO_7 ,  NO_8 ,   NO_9 ,  NO_0 , _______,
+     LCTL(LALT(KC_D)),  NO_1 ,  NO_2   ,  NO_3  ,   NO_4 ,   NO_5 ,          _______,     _______,           NO_6 ,  NO_7 ,  NO_8 ,   NO_9 ,  NO_0 , _______,
      KC_TAB  , NO_Q ,  NO_W   ,  NO_E  ,   NO_R ,   NO_T ,          _______,     _______,           NO_Y ,  NO_U ,  NO_I ,   NO_O ,  NO_P , KC_BSPC,
      KC_LSFT , NO_A ,  NO_S   ,  NO_D  ,   NO_F ,   NO_G ,          _______,     _______,           NO_H ,  NO_J ,  NO_K ,   NO_L ,NO_SCLN, NO_DQUO,
      KC_LCTL , NO_Z ,  NO_X   ,  NO_C  ,   NO_V ,   NO_B ,   DPRV  ,KC_CAPS,     FKEYS  ,  DNXT  ,  NO_N ,  NO_M ,NO_COMM, NO_DOT ,NO_SLSH, NO_QUES,
@@ -148,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_SYM] = LAYOUT_myr(
      _______, _______, _______, _______, _______, _______,           _______,     _______,           _______, _______, _______, _______, _______, _______,
-     _______,NOM_PIPE,  NO_GRV, NO_BSLS, NO_HASH, NO_ASTR,           _______,     _______,           _______, _______, _______, _______, _______, _______,
+     _______, _______, NO_GRV, NOM_BSLS, NO_HASH, NO_ASTR,           _______,     _______,           _______, _______, _______, _______, _______, _______,
      _______, NO_PERC, NO_CIRC, NO_AMPR, NOM_DLR,  NO_EQL,           _______,     _______,           _______, _______, _______, _______, _______, _______,
      _______, NO_PLUS,NOM_TILD,  NOM_AT, NO_UNDS, NO_MINS, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
