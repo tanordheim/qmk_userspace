@@ -31,6 +31,10 @@
             {
                 "TARGET": "splitkb_elora_rev1"
             }
+        ],
+        [
+            "keychron/q4/iso",
+            "tanordheim"
         ]
     ]
 }
