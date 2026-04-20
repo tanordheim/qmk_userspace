@@ -88,11 +88,15 @@ const key_override_t ko_l_dot_gt  = ko_make_with_layers_negmods_and_options(MOD_
 const key_override_t ko_l_dquo_qt = ko_make_with_layers_negmods_and_options(MOD_MASK_SHIFT, NO_DQUO,  NO_QUOT,   KO_LNX, KO_NEG, 0);
 const key_override_t ko_l_at_exl  = ko_make_with_layers_negmods_and_options(MOD_MASK_SHIFT, NO_AT,    NO_EXLM,   KO_LNX, KO_NEG, 0);
 
+// Shift+Backspace = Ctrl+Alt+D (Claude dictate)
+const key_override_t ko_bspc_dict = ko_make_with_layers_negmods_and_options(MOD_MASK_SHIFT, KC_BSPC, LCTL(LALT(KC_D)), KO_CODING, KO_NEG, 0);
+
 const key_override_t *key_overrides[] = {
     &ko_7_ampr,    &ko_8_astr,    &ko_9_lprn,    &ko_0_rprn,
     &ko_min_und,   &ko_eql_pls,   &ko_amp_ast,   &ko_sl_ques,   &ko_scln_coln,
     &ko_m_2_at,    &ko_m_4_dlr,   &ko_m_comm_lt, &ko_m_dot_gt,  &ko_m_dquo_qt, &ko_m_at_exl,
     &ko_l_2_at,    &ko_l_4_dlr,   &ko_l_comm_lt, &ko_l_dot_gt,  &ko_l_dquo_qt, &ko_l_at_exl,
+    &ko_bspc_dict,
     NULL,
 };
 
