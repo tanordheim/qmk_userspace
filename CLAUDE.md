@@ -121,16 +121,6 @@ For reference, default keymaps (`default_hlc`) typically provide 7 layers:
 - `_FUNCTION` - Function keys
 - `_ADJUST` - Layout switching and RGB control
 
-## Development Environment
-
-A Nix flake is provided for development:
-```bash
-# Enter development shell
-nix develop
-
-# Available tools: qmk, dos2unix
-```
-
 ## GitHub Actions
 
 Firmware is automatically built on push via `.github/workflows/build_binaries.yaml`:
