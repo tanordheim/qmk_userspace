@@ -127,6 +127,14 @@ bool dip_switch_update_user(uint8_t index, bool active) {
     return false; // prevent keyboard-level handler from also switching layers
 }
 
+// Tap a dead key, plus space on Mac to commit it (PC/Linux layout has no dead keys).
+static void tap_dead(uint16_t dead) {
+    tap_code16(dead);
+    if (get_highest_layer(default_layer_state) == _MAC) {
+        tap_code(KC_SPC);
+    }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     uint8_t mods = get_mods();
 
@@ -137,8 +145,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed && (mods & MOD_MASK_SHIFT)
                 && !(mods & (MOD_MASK_CTRL | MOD_MASK_ALT | MOD_MASK_GUI))) {
                 del_mods(MOD_MASK_SHIFT);
-                tap_code16(DEAD_CARET);
-                tap_code(KC_SPC);
+                tap_dead(DEAD_CARET);
                 set_mods(mods);
                 return false;
             }
@@ -154,13 +161,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        // Backslash key: \ unshifted (OS-aware), ` shifted (dead+space)
+        // Backslash key: \ unshifted (OS-aware), ` shifted (dead+space on Mac)
         case CK_BSLS:
             if (record->event.pressed) {
                 if (mods & MOD_MASK_SHIFT) {
                     del_mods(MOD_MASK_SHIFT);
-                    tap_code16(DEAD_GRV);
-                    tap_code(KC_SPC);
+                    tap_dead(DEAD_GRV);
                     set_mods(mods);
                 } else {
                     bool mac = (get_highest_layer(default_layer_state) == _MAC);
@@ -172,33 +178,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        // Dead key custom keycodes (same on both OSes, produce char + space)
+        // Dead key custom keycodes (Mac appends space to commit; PC has no dead keys)
         case CK_GRV:
             if (!record->event.pressed) return false;
             if (mods & MOD_MASK_SHIFT) {
                 del_mods(MOD_MASK_SHIFT);
-                tap_code16(DEAD_TILD);
-                tap_code(KC_SPC);
+                tap_dead(DEAD_TILD);
                 set_mods(mods);
             } else {
-                tap_code16(DEAD_GRV);
-                tap_code(KC_SPC);
+                tap_dead(DEAD_GRV);
             }
             return false;
 
         case CK_TILD:
             if (!record->event.pressed) return false;
             del_mods(MOD_MASK_SHIFT);
-            tap_code16(DEAD_TILD);
-            tap_code(KC_SPC);
+            tap_dead(DEAD_TILD);
             set_mods(mods);
             return false;
 
         case CK_CARET:
             if (!record->event.pressed) return false;
             del_mods(MOD_MASK_SHIFT);
-            tap_code16(DEAD_CARET);
-            tap_code(KC_SPC);
+            tap_dead(DEAD_CARET);
             set_mods(mods);
             return false;
     }
