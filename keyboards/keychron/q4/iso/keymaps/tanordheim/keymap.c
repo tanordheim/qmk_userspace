@@ -40,7 +40,7 @@ enum custom_keycodes {
 #define NAV_ESC  LT(_NAV, KC_ESC)
 #define FUN      MO(_FUN)
 #define ADJ      MO(_ADJ)
-#define DICTATE  LCTL(LALT(KC_D))
+#define DICTATE  KC_F13
 
 // Key overrides (Mac-specific: shift+' should give * not §)
 #define KO_NEG (MOD_MASK_CTRL | MOD_MASK_ALT | MOD_MASK_GUI)
