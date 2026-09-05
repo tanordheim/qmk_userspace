@@ -5,24 +5,16 @@
             "splitkb/halcyon/kyria/rev4",
             "tanordheim",
             {
-                "HLC_ENCODER": "1",
-                "TARGET": "splitkb_halcyon_kyria_rev4_hlc_encoder"
-            }
-        ],
-        [
-            "splitkb/halcyon/kyria/rev4",
-            "tanordheim",
-            {
-                "HLC_CIRQUE_TRACKPAD": "1",
-                "TARGET": "splitkb_halcyon_kyria_rev4_hlc_cirque_trackpad"
-            }
-        ],
-        [
-            "splitkb/halcyon/kyria/rev4",
-            "tanordheim",
-            {
                 "HLC_TFT_DISPLAY": "1",
-                "TARGET": "splitkb_halcyon_kyria_rev4_hlc_tft_display"
+                "TARGET": "splitkb_halcyon_kyria_rev4_left_hlc_tft_display"
+            }
+        ],
+        [
+            "splitkb/halcyon/kyria/rev4",
+            "tanordheim",
+            {
+                "HLC_ENCODER": "1",
+                "TARGET": "splitkb_halcyon_kyria_rev4_right_hlc_encoder"
             }
         ],
         [
