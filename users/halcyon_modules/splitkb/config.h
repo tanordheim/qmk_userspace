@@ -10,7 +10,10 @@
 #define SPLIT_POINTING_ENABLE
 #define POINTING_DEVICE_RIGHT
 
+// Zero lets a keymap manage panel/backlight power itself.
+#ifndef HLC_BACKLIGHT_TIMEOUT
 #define HLC_BACKLIGHT_TIMEOUT 120000
+#endif
 
 #define BACKLIGHT_PWM_DRIVER PWMD5
 #define BACKLIGHT_LEVELS 10

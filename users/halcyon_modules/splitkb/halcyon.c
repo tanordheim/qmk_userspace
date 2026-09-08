@@ -112,6 +112,7 @@ void housekeeping_task_kb(void) {
         display_module_housekeeping_task_kb(module_master == hlc_tft_display);
     }
 
+#if HLC_BACKLIGHT_TIMEOUT > 0
     // Backlight feature
     if (last_input_activity_elapsed() <= HLC_BACKLIGHT_TIMEOUT) {
         if (backlight_off) {
@@ -122,6 +123,7 @@ void housekeeping_task_kb(void) {
             backlight_suspend();
         }
     }
+#endif
 
     module_housekeeping_task_kb();
 
